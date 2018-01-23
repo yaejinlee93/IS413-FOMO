@@ -1,0 +1,76 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+
+        <title>FOMO</title>
+
+        ## add any site-wide scripts or CSS here; for example, jquery:
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        ## bootstrap4
+        <script src="${ STATIC_URL }homepage/media/bootstrap3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="${ STATIC_URL }homepage/media/bootstrap3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="${ STATIC_URL }homepage/media/bootstrap3/css/bootstrap-theme.min.css" />
+
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+
+        ## browser tab icon
+        <link rel="icon" href="${ STATIC_URL }homepage/media/heart.png" />
+
+    </head>
+    <body>
+        <header>
+          <div id="header_maintenance">
+           <%block name="header_maintenance">
+
+           </%block>
+          </div>
+          <nav class="navbar">
+            <a class="navbar-brand" href="/homepage"><img src="${ STATIC_URL }homepage/media/music_logo.png" /></a>
+            <%block name="menu">
+
+            </%block>
+          </nav>
+        </header>
+
+        <main>
+          <div class="row">
+            <div class="col-md-12" id="content_top">
+              <%block name="top">
+
+              </%block>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2" id="content_left">
+                <%block name="left">
+
+                </%block>
+            </div>
+            <div class="col-md-8" id="content_center">
+              <%block name="center">
+
+              </%block>
+            </div>
+            <div class="col-md-2" id="content_right">
+              <%block name="right">
+
+              </%block>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <%block name="footer">
+            <%! from datetime import datetime %>
+            &copy; Copyright ${ datetime.now().year }. All rights reserved.
+          </%block>
+        </footer>
+
+    </body>
+</html>
