@@ -9,4 +9,4 @@ class User(AbstractCUser):
     zipcode = models.TextField(blank=True, null=True)
 
     def get_purchases(self):
-            return [ 'Roku', 'Skis', 'Computer' ]
+        return [ 'Roku', 'Skis', 'Computer' ]
