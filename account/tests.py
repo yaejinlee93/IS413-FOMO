@@ -1,5 +1,6 @@
 from django.test import TestCase
 from account import models as amod
+from django.contrib.auth.models import Group
 
 class UserModelTest(TestCase):
 
@@ -23,6 +24,7 @@ class UserModelTest(TestCase):
         self.assertTrue(u2.check_password('password'))
 
     def test_add_groups_check_permissions(self):
-        '''Add groups to a user and check permissions'''
-        a = 1
-        self.assertEqual(a, 1)
+        '''Add groups to a users and check permissions'''
+
+        admin_group = Group.objects.get(name='admin')
+        admin_group.user_set.add(amod.User.objects.get(id=1))
