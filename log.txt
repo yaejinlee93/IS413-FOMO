@@ -1,0 +1,47 @@
+commit 783c9830abd773bbb78832dadeb1f672920fe4f1
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Thu Feb 1 15:44:32 2018 -0700
+
+    done with unit testing
+
+commit c6ae8393cafd491b826a1df185c99a901f71f683
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Thu Feb 1 12:33:55 2018 -0700
+
+    changes
+
+commit 64c2426a182a482a2dff0efd9888cadffc6adadf
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Wed Jan 31 14:08:14 2018 -0700
+
+    fixtures
+
+commit 59572b0caea6049545487053df5eac3f2f3d88a8
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Tue Jan 30 17:26:26 2018 -0700
+
+    unit testing
+
+commit 57d8e4afbcbee83ca1debbda5890b9516956ed58
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Mon Jan 29 21:15:51 2018 -0700
+
+    custom user class done
+
+commit 0c98f449fdd73dd99315d87c787658cbd35a9ed4
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Thu Jan 25 13:45:40 2018 -0700
+
+    changes from class
+
+commit ed64c3b412957dfd2b741cc51023feb14d95dbc3
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Thu Jan 25 12:35:52 2018 -0700
+
+    Sprint 0
+
+commit d6dcc2773f86dffd7c76fac44792bc2e21dd4e56
+Author: yaejinlee93 <yaejinlee93@gmail.com>
+Date:   Tue Jan 23 13:44:41 2018 -0700
+
+    initial code in the repo
