@@ -1,0 +1,38 @@
+<%inherit file='app_base.htm' />
+
+<%block name="top">
+
+
+
+</%block>
+
+<%block name="center">
+<h2>Products</h2>
+<a href="/manager/create" class="btn btn-primary pull-right" role="button">Create</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Product Type</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      % for p in product:
+      <tr>
+        <td>${ p.category }</td>
+        <td>${ p.TITLE }</td>
+        <td>${ p.name }</td>
+        <td>${ p.price }</td>
+        <td>${ p.get_quantity() }</td>
+        <td><a href="/manager/edit/${ p.id }/">Edit</a> | <a href="/manager/delete/${ p.id }/">Delete</a></td>
+      </tr>
+      % endfor
+    </tbody>
+  </table>
+
+</%block>

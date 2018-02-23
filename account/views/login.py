@@ -23,6 +23,7 @@ def process_request(request):
 
 class LoginForm(Formless):
     def init(self):
+        #self.fields['type'] = forms.ChoiceField() 
         self.fields['email'] = forms.CharField(label='Email')
         self.fields['password'] = forms.CharField(widget=forms.PasswordInput,label='Password')
         self.user = None
