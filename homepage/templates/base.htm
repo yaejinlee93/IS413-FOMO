@@ -20,10 +20,11 @@
         ${ django_mako_plus.links(self) }
 
         ## browser tab icon
-        <link rel="icon" href="${ STATIC_URL }homepage/media/heart.png" />
+        <link rel="icon" alt="heart" href="${ STATIC_URL }homepage/media/heart.png" />
 
     </head>
     <body>
+      <a href="#content_center" class="hide">Skip to Main Content</a>
         <header>
           <div id="header_maintenance">
            <%block name="header_maintenance">
@@ -31,7 +32,7 @@
            </%block>
           </div>
           <nav class="navbar">
-            <a class="navbar-brand" href="/homepage"><img src="${ STATIC_URL }homepage/media/music_logo.png" /></a>
+            <a class="navbar-brand" href="/homepage"><img alt="music logo" src="${ STATIC_URL }homepage/media/music_logo.png" /></a>
             <%block name="menu">
 
             </%block>

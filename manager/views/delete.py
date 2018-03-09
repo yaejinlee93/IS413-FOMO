@@ -15,4 +15,4 @@ def process_request(request, product:cmod.Product):
     context = {
 
     }
-    return request.dmp_render('delete.html', context)
+    return request.dmp.render('delete.html', context)

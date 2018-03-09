@@ -1,5 +1,6 @@
 from django.db import models
 from polymorphic.models import PolymorphicModel
+from django.conf import settings
 
 # Create Product and Category models
 
@@ -33,6 +34,25 @@ class Product(PolymorphicModel):
     last_modified = models.DateTimeField(auto_now=True)
     status = models.TextField(choices=STATUS_CHOICES, default='A')
 
+    def image_url(self):
+        '''Always returns an image'''
+        if self.images.exists():
+            url = settings.STATIC_URL + "catalog/media/products/" + self.images.first().filename
+        else:
+            url = settings.STATIC_URL + "catalog/media/products/image_unavailable.gif/"
+        return url
+        #if not return unavailable image
+
+    def image_urls(self):
+        '''Returns a list of images
+        If no image, return unavailable
+        will not return an empty list'''
+        if self.images.exists():
+            image_list = self.images.all()
+        else:
+            url = settings.STATIC_URL + "catalog/media/products/image_unavailable.gif/"
+        return url
+
 class BulkProduct(Product):
     TITLE = 'Bulk'
     quantity = models.IntegerField()
@@ -57,3 +77,9 @@ class RentalProduct(Product):
 
     def get_quantity(self):
         return 1
+
+#ProductImage model
+
+class ProductImage(models.Model):
+    filename = models.TextField()
+    product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)

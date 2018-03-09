@@ -12,4 +12,4 @@ def process_request(request):
     context = {
 
     }
-    return request.dmp_render('contact.html', context)
+    return request.dmp.render('contact.html', context)

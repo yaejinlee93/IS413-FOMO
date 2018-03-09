@@ -1,3 +1,13 @@
-h4.utc-time {
-    color: #AA3333;
+.category_list
+{
+  list-style: none;
+}
+.category_list > li
+{
+  font-size: 20px;
+}
+
+.active
+{
+  background-color: #A7B3FE;
 }

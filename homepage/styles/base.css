@@ -37,6 +37,19 @@ footer
 {
   padding: 0px;
   margin-bottom: 0px;
+  font-family: Verdana, Geneva, sans-serif;
+
+}
+
+.navbar-default .navbar-nav > .active{
+    color: #000;
+    background: #d65c14;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #d65c14;
 }
 
 .navbar-brand

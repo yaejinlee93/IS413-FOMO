@@ -10,4 +10,4 @@ def process_request(request):
     context = {
         'product' : product,
     }
-    return request.dmp_render('product.html', context)
+    return request.dmp.render('product.html', context)

@@ -33,7 +33,7 @@ class Formless(forms.Form):
                 return HttpResponseRedirect('/app/successurl/')
 
             # render the template
-            return request.dmp_render('mytemplate.html', {
+            return request.dmp.render('mytemplate.html', {
                 'form': form,
             })
 

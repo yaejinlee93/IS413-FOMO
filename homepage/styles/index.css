@@ -2,7 +2,44 @@ h4.utc-time {
     color: #AA3333;
 }
 
-#content_center
+.container
 {
-  height: 300px;
+  position: relative;
+}
+
+.top_left
+{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.top_left h1
+{
+  font-size: 370%;
+}
+
+.bottom_right
+{
+  position: absolute;
+  bottom: 22%;
+  right: 5%;
+  text-align: right;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.bottom_right h2
+{
+  font-size: 200%;
+}
+
+.button {
+  background: black;
+  border-radius: 100px;
+  padding: 10px 25px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+  font-family: Verdana, Geneva, sans-serif;
 }

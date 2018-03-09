@@ -1,0 +1,44 @@
+#catalog
+{
+  list-style: : none;
+  margin: : 0;
+  padding : 0;
+  text-align: center;
+}
+
+#catalog > li
+{
+  display: inline-block;
+  margin: 12px 18px;
+  padding: 10px;
+  border-radius: 4px;
+  width: 180px;
+  height: 220px;
+  vertical-align: top;
+  overflow-y: auto;
+  position: relative;
+}
+
+#catalog > li > #price
+{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: white;
+  background-color: #5665CA;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+#catalog > li > #name
+{
+  margin-top: 10px;
+  font-size: 20px;
+
+}
+
+#pic
+{
+    border: 1px solid #CCCCCC;
+}

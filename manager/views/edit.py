@@ -33,7 +33,7 @@ def process_request(request, product: cmod.Product):
     context = {
         'form': form,
     }
-    return request.dmp_render('edit.html', context)
+    return request.dmp.render('edit.html', context)
 
 class EditForm(Formless):
     def init(self):

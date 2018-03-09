@@ -3,12 +3,12 @@
 <%block name="menu">
   <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav nav-pills">
-        <li class="${ 'active' if request.dmp_router_page == 'index' else '' }"><a href="/">Home</a></li>
-        <li class="nav-item ${ 'active' if request.dmp_router_page == 'terms' else '' }"><a href="/terms">Terms</a></li>
-        <li class="nav-item ${ 'active' if request.dmp_router_page == 'about' else '' }"><a href="/about">About</a></li>
-        <li class="nav-item ${ 'active' if request.dmp_router_page == 'contact' else '' }"><a href="/contact">Contact</a></li>
-        <li class="nav-item ${ 'active' if request.dmp_router_page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
-        <li class="nav-item ${ 'active' if request.dmp_router_page == 'sections' else '' }"><a href="/sections">Sections</a></li>
+        <li class="${ 'active' if request.dmp.page == 'index' else '' }"><a href="/">Home</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'terms' else '' }"><a href="/terms">Terms</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'about' else '' }"><a href="/about">About</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'sections' else '' }"><a href="/sections">Sections</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">

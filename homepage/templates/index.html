@@ -1,13 +1,14 @@
 <%inherit file="app_base.htm" />
 
 <%block name="top">
-
-</%block>
-
-<%block name="center">
-    <div class="center">
-      <h3>Welcome to FOMO!</h3>
-        <img src="${ STATIC_URL }homepage/media/Band-and-String.gif" />
-        <h4>You can buy and rent any instruments.</h4>
+    <div class="container">
+        <img class="img-responsive" alt="music" src="${ STATIC_URL }homepage/media/music.jpg" />
+        <div class="top_left">
+          <h1>Enjoy Music</h1>
+        </div>
+        <div class="bottom_right">
+          <h2>Rent or Buy</h2>
+          <button type="button" class="button btn btn-default">Shop</button>
+        </div>
     </div>
 </%block>

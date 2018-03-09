@@ -13,4 +13,4 @@ def process_request(request):
     context = {
 
     }
-    return request.dmp_render('logout.html', context)
+    return request.dmp.render('logout.html', context)
