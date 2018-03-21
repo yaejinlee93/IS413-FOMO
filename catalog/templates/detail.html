@@ -1,0 +1,35 @@
+<%inherit file="app_base.htm" />
+
+<%block name="top">
+  <div class="prod_name">
+    <h1 class="text-center">${ prod_name }</h1>
+  </div>
+</%block>
+
+<%block name="center">
+
+  <div class="product_container">
+    <ul class="img_list">
+      % for img in product.image_urls():
+        <li><img alt="list of images" class="img-responsive img_item" src="${ img }" /></li>
+      % endfor
+    </ul>
+    <div class="product_image">
+      <img alt="product image" class="img-responsive prod_img" src="${ product.image_url() }"/>
+    </div>
+    <div class="description">
+       <p>
+         ${ product.description }
+      </p>
+    </div>
+    <div class="purchase">
+
+      % if hasattr(product, "quantity"):
+        Quantity: <input type="number" />
+      % endif
+
+      <button type="submit">BUY NOW</button>
+    </div>
+  </div>
+
+</%block>

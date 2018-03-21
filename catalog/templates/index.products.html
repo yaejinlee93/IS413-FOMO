@@ -3,11 +3,13 @@
 <%block name="content">
   <ul id="catalog">
     % for prod in six_items:
-      <li>
-        <div id="price" >$${ prod.price }</div>
-        <div><img id="pic" class = "img-responsive" src="${ prod.image_url() }"/></div>
-        <div id="name" >${ prod.name }</div>
-      </li>
+      <a href="/catalog/detail/${ prod.id }">
+        <li>
+            <div id="price" >${ prod.price }</div>
+            <div><img id="pic" class = "img-responsive" src="${ prod.image_url() }"/></div>
+            <div id="name" >${ prod.name }</div>
+        </li>
+      </a>
     % endfor
   </ul>
 </%block>

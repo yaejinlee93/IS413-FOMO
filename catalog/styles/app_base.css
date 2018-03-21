@@ -1,0 +1,50 @@
+.category_list
+{
+  list-style: none;
+}
+.category_list > li
+{
+  font-size: 20px;
+}
+
+.active
+{
+  background-color: #A7B3FE;
+}
+
+h1
+{
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+
+.recentList
+{
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+}
+
+.recentList > a > li
+{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.recentList > a > li > p
+{
+  margin: 0px;
+  font-size: 14px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.recentList > a > li > img
+{
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  margin: 5px 30px 5px 32px;
+}

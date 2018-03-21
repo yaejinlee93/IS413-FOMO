@@ -1,15 +1,5 @@
 <%inherit file="app_base.htm" />
 
-<%block name="left">
-  <ul class="category_list">
-    <li><a class="${ 'active' if cat_name == 'All Products' else '' }" href="/catalog/index/0">All Products</a></li>
-
-    % for cat in categories:
-      <li><a class="${ 'active' if cat_name == cat.name else '' }" href="/catalog/index/${ cat.id }">${ cat.name }</a></li>
-    % endfor
-  </ul>
-</%block>
-
 <%block name="top">
   <h1 class="text-center">${ 'All Products' if category is None else category.name }</h1>
 </%block>

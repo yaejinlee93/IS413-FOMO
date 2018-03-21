@@ -48,10 +48,12 @@ class Product(PolymorphicModel):
         If no image, return unavailable
         will not return an empty list'''
         if self.images.exists():
-            image_list = self.images.all()
+            image_list = []
+            for img in self.images.all():
+                image_list.append(settings.STATIC_URL + "catalog/media/products/" + img.filename)
         else:
-            url = settings.STATIC_URL + "catalog/media/products/image_unavailable.gif/"
-        return url
+            image_list = [settings.STATIC_URL + "catalog/media/products/image_unavailable.gif/"]
+        return image_list
 
 class BulkProduct(Product):
     TITLE = 'Bulk'
@@ -60,7 +62,7 @@ class BulkProduct(Product):
     reorder_quantity = models.IntegerField()
 
     def get_quantity(self):
-        return self.quantity
+        return self.quantitys
 
 class IndividualProduct(Product):
     TITLE = 'Individual'

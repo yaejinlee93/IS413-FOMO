@@ -1,4 +1,15 @@
 <%inherit file="/homepage/templates/base.htm" />
+<%! from catalog import models as cmod %>
+
+<%block name="left">
+  <ul class="category_list">
+    <li><a class="${ 'active' if cat_name == 'All Products' else '' }" href="/catalog/index/0">All Products</a></li>
+
+    % for cat in cmod.Category.objects.all():
+      <li><a class="${ 'active' if cat_name == cat.name else '' }" href="/catalog/index/${ cat.id }">${ cat.name }</a></li>
+    % endfor
+  </ul>
+</%block>
 
 <%block name="menu">
   <div class="collapse navbar-collapse">
@@ -14,7 +25,7 @@
         <li class="nav-item dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <span class="glyphicon glyphicon-log-in"></span> Account
-            </a>
+          </a>
           <ul class="dropdown-menu">
             <li><a href="/account/login">Log In</a></li>
             <li><a href="/account/signup">Sign Up</a></li>
@@ -22,4 +33,26 @@
         </li>
       </ul>
     </div>
+</%block>
+
+<%block name="right">
+
+  <h1>Recently Viewed Products</h1>
+  <%
+    if request.dmp.page == 'detail':
+      fiveList = request.last_five [1:6]
+    else:
+      fiveList = request.last_five [0:5]
+  %>
+
+  <ol class="recentList">
+    % for prod in fiveList:
+    <a href="/catalog/detail/${ prod.id }">
+      <li>
+        <img alt="recently viewed product image" class="img-responsive" src="${ prod.image_url() }"/>
+        <p>${ prod.name }</p>
+      </li>
+    </a>
+    % endfor
+  </ol>
 </%block>

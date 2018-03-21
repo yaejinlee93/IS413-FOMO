@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-#catalog > li
+#catalog > a >  li
 {
   display: inline-block;
   margin: 12px 18px;
@@ -19,7 +19,7 @@
   position: relative;
 }
 
-#catalog > li > #price
+#catalog > a > li > #price
 {
   position: absolute;
   right: 0px;
@@ -31,7 +31,7 @@
 
 }
 
-#catalog > li > #name
+#catalog > a > li > #name
 {
   margin-top: 10px;
   font-size: 20px;

@@ -1,0 +1,62 @@
+.prod_name
+{
+  padding-bottom: 20px;
+}
+
+.prod_name > h1
+{
+  font-size: 35px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.img_list
+{
+  float: left;
+  padding-left: 10px;
+}
+
+.img_list > li
+{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  margin: 0px 10px 10px 0px;
+
+}
+
+.product_image > img
+{
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+  height: 300px;
+  float: left;
+  margin: 0px 20px 20px 10px;
+}
+
+.description
+{
+  font-size: 15px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.purchase
+{
+  text-align: right;
+}
+
+.purchase > input
+{
+  width: 50px;
+  margin-right: 10px;
+}
+
+.purchase > button
+{
+  padding: 10px 30px 10px 30px;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: #5665CA;
+  color: white;
+}
