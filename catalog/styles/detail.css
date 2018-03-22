@@ -52,11 +52,57 @@
   margin-right: 10px;
 }
 
-.purchase > button
+/* .purchase > button
 {
   padding: 10px 30px 10px 30px;
   font-size: 15px;
   border-radius: 15px;
-  background-color: #5665CA;
+  background-color: #364c7a;
   color: white;
+} */
+
+.purchase > button {
+  display: inline-block;
+  border-radius: 60px;
+  background: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 180px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.purchase > button > span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.purchase > button > span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.purchase > button:hover
+{
+  background-color: #364c7a;
+  color: white;
+}
+
+.purchase > button:hover > span {
+  padding-right: 25px;
+}
+
+.purchase > button:hover > span:after {
+  opacity: 1;
+  right: 0;
 }
