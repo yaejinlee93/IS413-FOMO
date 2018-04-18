@@ -9,6 +9,7 @@
 <%block name="center">
 
   <div class="product_container">
+  %if product.status == 'A':
     <ul class="img_list">
       % for img in product.image_urls():
         <li><img alt="list of images" class="img-responsive img_item" src="${ img }" /></li>
@@ -24,12 +25,20 @@
     </div>
     <div class="purchase">
 
+      <p id="product_price">Price: ${'${:,.2f}'.format(product.price)}</p>
+      <div id="myform">
+        ${ form }
+      </div>
+<!--
       % if hasattr(product, "quantity"):
         Quantity: <input type="number" />
       % endif
 
-      <button type="submit"><span>BUY NOW</span></button>
+      <button type="submit"><span>BUY NOW</span></button> -->
     </div>
+  %else:
+    <h2>This product is no longer available</h2>
+  %endif
   </div>
 
 </%block>

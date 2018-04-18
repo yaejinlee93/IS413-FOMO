@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import shutil
+import stripe
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'o#ma&k#yarku7ft0e+5=ox^xnoyuijuy@b+gc=hblcpg7i(qgs'
+
+#STRIPE SECRET KEY
+STRIPE_PUBLIC_KEY = 'pk_test_M0GAtIsb3ZRnkg5wUqZhQ2uZ'
+STRIPE_SECRET_KEY = 'sk_test_4XQjR8Q53jA2SQ7X1I3cCT7Q'
+stripe.api_key = STRIPE_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'catalog.history.LastFiveMiddleWare',
+    'account.basicauth.BasicAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'FOMO.urls'

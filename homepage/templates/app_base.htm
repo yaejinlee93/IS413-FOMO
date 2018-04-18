@@ -8,18 +8,27 @@
         <li class="nav-item ${ 'active' if request.dmp.page == 'about' else '' }"><a href="/about">About</a></li>
         <li class="nav-item ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
         <li class="nav-item ${ 'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
-        <li class="nav-item ${ 'active' if request.dmp.page == 'sections' else '' }"><a href="/sections">Sections</a></li>
+        <li class="nav-item ${ 'active' if request.dmp.page == 'sections' else '' }"><a href="/catalog/index/">View Products</a></li>
       </ul>
+      </ul>
+      % if request.user.is_authenticated:
+
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="glyphicon glyphicon-log-in"></span> Account
+              ${request.user} <span class="caret"></span>
             </a>
           <ul class="dropdown-menu">
-            <li><a href="/account/login">Log In</a></li>
-            <li><a href="/account/signup">Sign Up</a></li>
+            <li><a href="/account/logout">Log Out</a></li>
+            <li><a href="#">My Account</a></li>
           </ul>
         </li>
       </ul>
+      % else:
+      <ul class="nav navbar-nav navbar-right nav-pills">
+        <li class="${ 'active' if request.dmp.page == 'account/signup/' else '' }"><a href="/account/signup">Sign Up</a></li>
+        <li class="${ 'active' if request.dmp.page == 'account/login/' else '' }"><a href="/account/login">Log In</a></li>
+      </ul>
+      % endif
     </div>
 </%block>

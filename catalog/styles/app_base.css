@@ -48,3 +48,14 @@
   border: 1px solid #CCCCCC;
   margin: 5px 30px 5px 43px;
 }
+
+.navbar-default .navbar-nav > .active{
+    color: #000;
+    background: #d65c14;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #d65c14;
+}

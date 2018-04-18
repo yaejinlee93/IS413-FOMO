@@ -1,0 +1,24 @@
+<%inherit file="app_base.htm" />
+<%namespace name='fl' module='formlib.tags'/>
+
+<%block name="center">
+  <div id="myform">
+  <h1>Order Total: ${'${:,.2f}'.format(total_price)}</h1>
+  <h2>Shipping Details:</h2>
+  <%fl:render>
+    <div class='text-center'>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_M0GAtIsb3ZRnkg5wUqZhQ2uZ"
+        data-amount="${ stripe_price }"
+        data-name="FOMO"
+        data-description="Checkout"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+    </div>
+
+  </%fl:render>
+
+  </div>
+</%block>

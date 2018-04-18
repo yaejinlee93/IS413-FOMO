@@ -1,0 +1,70 @@
+<%inherit file="app_base.htm" />
+
+<%block name="center">
+  <div class="container-fluid">
+  <h1>${request.user.first_name}'s Shopping Cart</h1>
+
+  %if order.num_items() > 0:
+  <div id="orderItems" class='container-fluid'>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    %for item in cart:
+      <tr>
+        <td>${loop.index + 1}</td>
+        <th scope="row"><a href="/catalog/detail/${item.product.id}/"><img src="${item.product.image_url()}" width="75" /></a></th>
+        <td><a href='/catalog/detail/${item.product.id}/'>${item.product.name}</a></td>
+        <td>${'${:,.2f}'.format(item.price)}</td>
+        <td>${item.quantity}</td>
+        <td>${'${:,.2f}'.format(item.extended)}</td>
+        <td><a href='/catalog/cart.remove/${item.id}/'>Remove</a></td>
+      </tr>
+    %endfor
+    </tbody>
+    </table>
+  </div>
+
+  <div id="orderTotal">
+    <table id="orderTotalTable" class="table">
+      <tbody>
+        <tr>
+          <td>Subtotal</td>
+          <td>${'${:,.2f}'.format(order.subtotal)}</td>
+        </tr>
+        <tr>
+          <td>Total Tax</td>
+          <td>${'${:,.2f}'.format(tax_amount)}</td>
+        </tr>
+        <tr>
+          <td>Order Total</td>
+          <td>${'${:,.2f}'.format(order.total_price)}</td>
+        </tr>
+      </tbody>
+    </table>
+    %if order.total_price > 0:
+    <div class="text-center">
+      <a href="/catalog/checkout/" id="buyButton" class="btn btn-lg btn-primary text-center">Checkout</a>
+    </div>
+    %endif
+  </div>
+  %else:
+  <h2>Your cart is empty.</h2>
+  <a id="past_items" class="btn btn-md btn-default" href="#">View Past Items</a>
+  <div id="pastItems">
+  %for item in past_cart:
+    <a href="/catalog/detail/${item.id}/"><img class="thumbnail" width="150" src="${item.image_url()}" /></a>
+  %endfor
+  </div>
+  %endif
+  </div>
+</%block>

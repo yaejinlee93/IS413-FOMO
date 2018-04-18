@@ -1,0 +1,75 @@
+<%inherit file="app_base.htm" />
+
+<%block name='center'>
+  <div id='receipt'>
+    <h1>Thank you for your purchase, ${order.user}.</h1>
+    <div class="receipt_line">
+      <div class="receipt_item">
+        <h2>Your order will be sent to:</h2>
+        <div id="address">
+          <p>${ order.ship_address }</p>
+          <p>${ order.ship_city }, ${ order.ship_state } ${ order.ship_zip_code }</p>
+        </div>
+      </div>
+      <!-- <div class="receipt_item">
+        <h2>Your order tracking number:</h2>
+        <p>${ order.ship_tracking }</p>
+      </div> -->
+    </div>
+    <div class="receipt_line">
+      <div class="receipt_item">
+        <h2>Order Details</h2>
+        <p>Order number: ${order.id}</p>
+        <p>Order date: ${order.order_date}</p>
+      </div>
+    </div>
+
+  <div id="order_items">
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    %for item in cart:
+      <tr>
+        <td>${loop.index + 1}</td>
+        <th scope="row"><img src="${item.product.image_url()}" width="75" /></th>
+        <td>${item.product}</td>
+        <td>${'${:,.2f}'.format(item.price)}</td>
+        <td>${item.quantity}</td>
+        <td>${'${:,.2f}'.format(item.extended)}</td>
+      </tr>
+    %endfor
+      <tr>
+        <td></td><td></td><td></td><td></td>
+        <td>Subtotal</td>
+        <td>${'${:,.2f}'.format(order.subtotal)}</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td>
+        <td>Total Tax</td>
+        <td>${'${:,.2f}'.format(order.total_price - order.subtotal)}</td>
+      </tr>
+      <tr>
+        <td></td><td></td><td></td><td></td>
+        <td class="total">Order Total</td>
+        <td class="total">${'${:,.2f}'.format(order.total_price)}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <div id="buttons" class='receipt_line'>
+    <a class='btn btn-md btn-default' href='/catalog/index/'>Continue Shopping</a>
+    <!-- <a id="print" class='btn btn-md btn-primary' href='#'>Print Receipt</a> -->
+    <!-- <a id="print" class='btn btn-md btn-primary' href='/catalog/receipt.email/${order.id}/'>Resend Email Receipt</a> -->
+  </div>
+</div>
+</%block>
